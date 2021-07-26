@@ -3,6 +3,13 @@ public class Client {
     String name;
     String address;
 
+
+    // constructor
+    Client(final String name, final String address){
+        this.setAddress(address);
+        this.setName(name);
+    }
+
     // methods
     void setName(final String newName){
         this.name = newName;
