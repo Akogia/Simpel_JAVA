@@ -24,7 +24,7 @@ public class Article {
      */
     void setTax(double newTax){
         if(newTax < 0){
-            throw new IllegalArgumentException("Invalid input of tax!")
+            throw new IllegalArgumentException("Invalid input of tax!");
         }
         this.tax = newTax;
     }
