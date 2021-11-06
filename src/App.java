@@ -1,9 +1,13 @@
+import java.io.RandomAccessFile;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class App {
+
+        public static String pw;
     public static void main(String[] args) throws Exception {
         getConnection();
+
 
         System.out.println("Hello, World!");
 
@@ -33,14 +37,27 @@ public class App {
 
         // get bill information
         bill1.getBillInformation();
+
+
     }
 
+
+
+
     public static Connection getConnection() throws Exception {
+        // reads the password from config.txt file. This file is ignored by git
+        try{
+                RandomAccessFile raf = new RandomAccessFile("config.txt", "r");
+                pw = raf.readLine();
+        } catch (Exception e){
+                    System.out.println(e);
+        }
+
+        // build up the connection to mySQL server for the created database 'mydatabase'
         try{
             String driver = "com.mysql.jdbc.Driver";
             String url = "jdbc:mysql://localhost:3306/mydatabase";
             String name = "root";
-            String pw = "";
             Class.forName(driver);
 
             Connection conn = DriverManager.getConnection(url, name, pw);
@@ -49,4 +66,5 @@ public class App {
         } catch (Exception e){System.out.println(e);}
         return null;
     }
+
 }

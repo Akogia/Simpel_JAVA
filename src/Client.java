@@ -2,6 +2,7 @@ public class Client {
     // attributes
     String name;
     String address;
+    private int id;
 
 
     // constructor
