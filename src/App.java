@@ -1,18 +1,26 @@
 import java.io.RandomAccessFile;
-import java.sql.Connection;
-import java.sql.DriverManager;
+import java.sql.*;
+
 
 public class App {
 
         public static String pw;
+        public static Connection conn = null;
+        private static int id = 0;
+    
+    /** 
+     * @param args
+     * @throws Exception
+     */
     public static void main(String[] args) throws Exception {
+
+        // Connects to mySQL server
         getConnection();
-
-
-        System.out.println("Hello, World!");
 
         // create new Client with name and address
         Client client1 = new Client("John Johnsson","arbitrarystreet 10, 4859 Cool City");
+
+        writeIntoDatabase(client1);
 
         // create Bill object
         Bill bill1 = new Bill(client1);
@@ -37,13 +45,24 @@ public class App {
 
         // get bill information
         bill1.getBillInformation();
-
-
     }
 
 
 
-
+    
+    /** 
+     * @return Connection
+     * @throws Exception
+     */
+    /*
+    This method connects to MySQL Server and uses 'mydatabase'. This following script describes the created table:
+    CREATE TABLE `customer` (
+    `ID` int NOT NULL,
+    `Name` varchar(45) DEFAULT NULL,
+    `Address` tinytext,
+    PRIMARY KEY (`ID`)
+    )
+    */
     public static Connection getConnection() throws Exception {
         // reads the password from config.txt file. This file is ignored by git
         try{
@@ -60,11 +79,39 @@ public class App {
             String name = "root";
             Class.forName(driver);
 
-            Connection conn = DriverManager.getConnection(url, name, pw);
+            conn = (Connection) DriverManager.getConnection(url, name, pw);
             System.out.println("Connected");
             return conn;
         } catch (Exception e){System.out.println(e);}
         return null;
+    }
+
+    
+    /** This method writes clients data into the database customer
+     * @param clientInput
+     * @return String
+     * @throws SQLException
+     */
+    public static String writeIntoDatabase(Client clientInput) throws SQLException {
+        String inputText = "INSERT INTO `mydatabase`.`customer` (`ID`, `Name`, `Address`) VALUES ('" +
+        id +
+        "', '" +  clientInput.getName() +
+        "', '"+ clientInput.getAddress()+
+        "');";
+        System.out.println(inputText);
+        try{
+            Statement stmt = (Statement) conn.createStatement();
+            stmt.executeUpdate(inputText);
+            id++;
+            System.out.println(id);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Record is inserted in the table successfully, please check");
+        return "successfull";
     }
 
 }

@@ -21,6 +21,9 @@ Depending of the scope of the program, not all descriptions will be described in
 
 # Sofware Development Process
 
+<!---
+This plantuml has been used:
+
 ```plantuml
 @startuml
 interface interface
@@ -39,10 +42,18 @@ interface -> (Design)
 interface -> (Sourcecode)
 @enduml
 ```
+-->
+
+
+
+![Image](../Simpel_JAVA/out/README/README.svg "Software Development Process")
 
 # Use Case
 
 The use case of the shop shall show the system with all stakeholders and their interactions.
+
+<!---
+This plantuml has been used:
 
 ```plantuml
 @startuml
@@ -69,6 +80,9 @@ rectangle Shop {
 }
 @enduml
 ```
+-->
+
+![Image](../Simpel_JAVA/out/README/README-1.svg "Use Case")
 
 ## Use Case Description
 
@@ -119,6 +133,9 @@ This is an example for the use case *order from premium client*
 
 This shall show one acitvity diagram of the program. The customer shall receive a 3% discount on the purchase, if  the amount is higher than 100 €.
 
+<!---
+This plantuml has been used:
+
 ```plantuml
 @startuml
 rectangle Pricecalculation {
@@ -133,9 +150,17 @@ rectangle Pricecalculation {
 }
 @enduml
 ```
+-->
+
+![Image](../Simpel_JAVA/out/README/README-2.svg "Activity Diagram")
+
+
 # Class
 
 This chapter shall describe all classes and their interactions
+
+<!---
+This plantuml has been used:
 
 ```plantuml
 @startuml
@@ -171,3 +196,12 @@ class Client {
 Bill "*" x--* "1" Client : billReceiver
 @enduml
 ```
+-->
+
+![Image](../Simpel_JAVA/out/README/README-3.svg "Class")
+
+# Future Tasks
+
+- All classes need to be displayed how they interact to each other.
+- Backend: It shall be possible to read/write clients in the exisiting database
+- Frontend: design with login functionality for customer
