@@ -1,12 +1,12 @@
 import java.io.RandomAccessFile;
 import java.sql.*;
 
-
 public class App {
 
         public static String pw;
         public static Connection conn = null;
-        private static int id = 0;
+        private static int id = 3;
+        public static Statement stmt = null;
     
     /** 
      * @param args
@@ -18,9 +18,9 @@ public class App {
         getConnection();
 
         // create new Client with name and address
-        Client client1 = new Client("John Johnsson","arbitrarystreet 10, 4859 Cool City");
+        Client client1 = new Client("William Wilsson","arbitrarystreet 101, 56498 Springfield");
 
-        writeIntoDatabase(client1);
+        //writeIntoDatabase(client1);
 
         // create Bill object
         Bill bill1 = new Bill(client1);
@@ -45,6 +45,8 @@ public class App {
 
         // get bill information
         bill1.getBillInformation();
+
+        readFromDatabase(client1);
     }
 
 
@@ -69,7 +71,7 @@ public class App {
                 RandomAccessFile raf = new RandomAccessFile("config.txt", "r");
                 pw = raf.readLine();
         } catch (Exception e){
-                    System.out.println(e);
+                System.out.println(e);
         }
 
         // build up the connection to mySQL server for the created database 'mydatabase'
@@ -80,6 +82,7 @@ public class App {
             Class.forName(driver);
 
             conn = (Connection) DriverManager.getConnection(url, name, pw);
+            stmt = (Statement) conn.createStatement();
             System.out.println("Connected");
             return conn;
         } catch (Exception e){System.out.println(e);}
@@ -94,13 +97,13 @@ public class App {
      */
     public static String writeIntoDatabase(Client clientInput) throws SQLException {
         String inputText = "INSERT INTO `mydatabase`.`customer` (`ID`, `Name`, `Address`) VALUES ('" +
-        id +
-        "', '" +  clientInput.getName() +
-        "', '"+ clientInput.getAddress()+
-        "');";
+                            id +
+                            "', '" +  clientInput.getName() +
+                            "', '"+ clientInput.getAddress()+
+                            "');";
         System.out.println(inputText);
         try{
-            Statement stmt = (Statement) conn.createStatement();
+            stmt = (Statement) conn.createStatement();
             stmt.executeUpdate(inputText);
             id++;
             System.out.println(id);
@@ -110,8 +113,23 @@ public class App {
             e.printStackTrace();
         }
 
-        System.out.println("Record is inserted in the table successfully, please check");
-        return "successfull";
+        return "Record is inserted in the table successfully, please check";
     }
+
+    public static void readFromDatabase(Client searchClient) throws SQLException {
+        String query = "SELECT * FROM `mydatabase`.`customer` WHERE Name = '" + searchClient.getName() + "';";
+        try{
+            ResultSet clientData = stmt.executeQuery(query);
+            while (clientData.next()) {
+                System.out.println(clientData.getString(1) + ", " + clientData.getString(2) + ", "
+                    + clientData.getString(3));
+          
+              }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        }
 
 }

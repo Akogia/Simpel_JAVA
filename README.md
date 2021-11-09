@@ -46,7 +46,7 @@ interface -> (Sourcecode)
 
 
 
-![PlantUML model](//www.plantuml.com/plantuml/svg/VP5DKkim48JtEiKiauKlaCMhB1vhgC055Bbbfae_HXeLuVR8hi8I1hBokFjhM-evPz59YdUAWo1PRK3Rf0vFALuT_966CRw7uHyTdcSOjcoqS0p74-cWtKU6sXajSC5RuGIF89dsQHwhl0aKBQKEL_V2xG__aNbQlZQkW_eIw9kPO3cWcUr6iIG34qTKgZuuJAeN6_bmWocYQoDKYvcIzcl2p-oWVdDfI3ozof9zB38NgJnMx2_UmQxu2xBG1Rcu9IFrRJrMBzDGvefksphHjKna-TQjykV6TkQTWXlPYjohVK_gZ30Mxpu1 "Software Development Process")
+![PlantUML model](http://www.plantuml.com/plantuml/svg/VP5DKkim48JtEiKiauKlaCMhB1vhgC055Bbbfae_HXeLuVR8hi8I1hBokFjhM-evPz59YdUAWo1PRK3Rf0vFALuT_966CRw7uHyTdcSOjcoqS0p74-cWtKU6sXajSC5RuGIF89dsQHwhl0aKBQKEL_V2xG__aNbQlZQkW_eIw9kPO3cWcUr6iIG34qTKgZuuJAeN6_bmWocYQoDKYvcIzcl2p-oWVdDfI3ozof9zB38NgJnMx2_UmQxu2xBG1Rcu9IFrRJrMBzDGvefksphHjKna-TQjykV6TkQTWXlPYjohVK_gZ30Mxpu1 "Software Development Process")
 
 # Use Case
 
@@ -82,7 +82,7 @@ rectangle Shop {
 ```
 -->
 
-![PlantUML model](//www.plantuml.com/plantuml/svg/XL51RiCm3Bld5JfkX_O1FHJzGnzGQBQN6BLbGvQn1Tl-FWT8X3P8jbj8KHGPNueWIusXAtTF6HaZP3HtxDrLnk20dH6aFhWEZII6Wi6LxBWaUcHk4QdjyCBLd8DNQDetoGmok-XhlCsa7e3ha39yTG3mx0a7zlqW1tX9R1jy6zN_TL9lyRgpCBEjXb-RldEAIxGvhvhlpTLZLMdtLCOngh4YdUlwTgMZJHzqFF-Lw0JkKnpPybzqDTCK9_1aGhLbwm4cyU7x_DXgagsAg-wfYS4oj8urjy7w5nXsrWiOPBidIGHeJAea6ugVxjBQrXX-0G00 "Use Case")
+![PlantUML model](http://www.plantuml.com/plantuml/svg/XL51RiCm3Bld5JfkX_O1FHJzGnzGQBQN6BLbGvQn1Tl-FWT8X3P8jbj8KHGPNueWIusXAtTF6HaZP3HtxDrLnk20dH6aFhWEZII6Wi6LxBWaUcHk4QdjyCBLd8DNQDetoGmok-XhlCsa7e3ha39yTG3mx0a7zlqW1tX9R1jy6zN_TL9lyRgpCBEjXb-RldEAIxGvhvhlpTLZLMdtLCOngh4YdUlwTgMZJHzqFF-Lw0JkKnpPybzqDTCK9_1aGhLbwm4cyU7x_DXgagsAg-wfYS4oj8urjy7w5nXsrWiOPBidIGHeJAea6ugVxjBQrXX-0G00 "Use Case")
 
 ## Use Case Description
 
@@ -152,7 +152,7 @@ rectangle Pricecalculation {
 ```
 -->
 
-![PlantUML model](//www.plantuml.com/plantuml/svg/NO-n3e8m48RtFiNl1Wu49eD4m-hcv7wfLsnI2cdBO8oBp-DJ-IJMbiaklUJ_lZztlG_amZ8QuLW6ieDXd9sMBCd8nL3GayL38BxDx6WO2Old2xkW8t5IY75AKq-Qj2hcNmEEQEhwytgN23UsAExioqHWdu43yhz5NRMxBcLiFAEmKoRPNhLQ7IXjoU1VRQgcxTOLfbayHH-bUD0N   "Activity Diagram")
+![PlantUML model](http://www.plantuml.com/plantuml/svg/NO-n3e8m48RtFiNl1Wu49eD4m-hcv7wfLsnI2cdBO8oBp-DJ-IJMbiaklUJ_lZztlG_amZ8QuLW6ieDXd9sMBCd8nL3GayL38BxDx6WO2Old2xkW8t5IY75AKq-Qj2hcNmEEQEhwytgN23UsAExioqHWdu43yhz5NRMxBcLiFAEmKoRPNhLQ7IXjoU1VRQgcxTOLfbayHH-bUD0N)
 
 
 # Class
