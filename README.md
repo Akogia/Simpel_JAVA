@@ -46,7 +46,7 @@ interface -> (Sourcecode)
 
 
 
-![Image](../Simpel_JAVA/out/README/README.svg "Software Development Process")
+![PlantUML model](//www.plantuml.com/plantuml/svg/VP5DKkim48JtEiKiauKlaCMhB1vhgC055Bbbfae_HXeLuVR8hi8I1hBokFjhM-evPz59YdUAWo1PRK3Rf0vFALuT_966CRw7uHyTdcSOjcoqS0p74-cWtKU6sXajSC5RuGIF89dsQHwhl0aKBQKEL_V2xG__aNbQlZQkW_eIw9kPO3cWcUr6iIG34qTKgZuuJAeN6_bmWocYQoDKYvcIzcl2p-oWVdDfI3ozof9zB38NgJnMx2_UmQxu2xBG1Rcu9IFrRJrMBzDGvefksphHjKna-TQjykV6TkQTWXlPYjohVK_gZ30Mxpu1 "Software Development Process")
 
 # Use Case
 
@@ -82,7 +82,7 @@ rectangle Shop {
 ```
 -->
 
-![Image](../Simpel_JAVA/out/README/README-1.svg "Use Case")
+![PlantUML model](//www.plantuml.com/plantuml/svg/XL51RiCm3Bld5JfkX_O1FHJzGnzGQBQN6BLbGvQn1Tl-FWT8X3P8jbj8KHGPNueWIusXAtTF6HaZP3HtxDrLnk20dH6aFhWEZII6Wi6LxBWaUcHk4QdjyCBLd8DNQDetoGmok-XhlCsa7e3ha39yTG3mx0a7zlqW1tX9R1jy6zN_TL9lyRgpCBEjXb-RldEAIxGvhvhlpTLZLMdtLCOngh4YdUlwTgMZJHzqFF-Lw0JkKnpPybzqDTCK9_1aGhLbwm4cyU7x_DXgagsAg-wfYS4oj8urjy7w5nXsrWiOPBidIGHeJAea6ugVxjBQrXX-0G00 "Use Case")
 
 ## Use Case Description
 
@@ -152,7 +152,7 @@ rectangle Pricecalculation {
 ```
 -->
 
-![Image](../Simpel_JAVA/out/README/README-2.svg "Activity Diagram")
+![PlantUML model](//www.plantuml.com/plantuml/svg/NO-n3e8m48RtFiNl1Wu49eD4m-hcv7wfLsnI2cdBO8oBp-DJ-IJMbiaklUJ_lZztlG_amZ8QuLW6ieDXd9sMBCd8nL3GayL38BxDx6WO2Old2xkW8t5IY75AKq-Qj2hcNmEEQEhwytgN23UsAExioqHWdu43yhz5NRMxBcLiFAEmKoRPNhLQ7IXjoU1VRQgcxTOLfbayHH-bUD0N   "Activity Diagram")
 
 
 # Class
@@ -198,7 +198,7 @@ Bill "*" x--* "1" Client : billReceiver
 ```
 -->
 
-![Image](../Simpel_JAVA/out/README/README-3.svg "Class")
+![PlantUML model](http://www.plantuml.com/plantuml/svg/RLBDRi8m3Bxp555F7OF3hXD2iEt21KtRNi0afegKE5hY0jEqTry0PwBfUcg_7zjVxLLYYDnxDz4EKb9FrZdrFL7vkLScz3k72dpeYOUOiKcFKOQJ0C_E8h7QvN9lgD4UC0gpMEY8mBXSNfgrTu8VWZKg8Rz8vNPl2LofJ7WinC00ncmelsbiBR7wx87OyjUi-9Abpk5hp8AwaVYaZmmSPTXQ_06dqK0P6yWwv7EY3Ur3zC0sK0bNJDrDl9gwzXYZQ_-VN8FJM-HBi9hZmE0gcyIJ4SjAClqpaSsBekp-dQEbJX5u729WJCIKHjkK0ksDSLPvwf-wpPe_FHxFdxLaVNNUg0GfGY4wgJQ6HN-DUZdlPjgeqtm-LSr3Ks8_3azrXMHwxtu1)
 
 # Future Tasks
 
