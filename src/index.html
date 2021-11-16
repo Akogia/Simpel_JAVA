@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coding Tutorial</title>
+    <link rel="stylesheet" href = "index.css">
+</head>
+<body>
+    <div class="full-page">
+        <div class="navbar">
+            <div>
+                <a href='website.html'>This Tutorial</a>
+            </div>
+            <nav>
+                <ul id='MenuItems'>
+                    <li><a href='#'>Home</a></li>
+                    <li><a href='#'>About Us</a></li>
+                    <li><a href='#'>Services</a></li>
+                    <li><a href='#'>Contact</a></li>
+                    <li><button class = 'loginBtn' onclick="document.getElementById('login-form').style.display ='block'" style= "width:auto">Login</button></li>
+                </ul>
+            </nav>
+        </div>
+        <div id='login-form' class="login-page">
+            <div class="form-box">
+                <div class="button-box">
+                    <div id='btn'></div>
+                    <button type="button" onclick="login()" class="toggle-btn">Login</button>
+                    <button type="button" onclick="register()" class="toggle-btn">Register</button>
+                </div>
+                <form id="login" class="input-group-login">
+                    <input type="text" class="input-field" placeholder="E-Mail" required>
+                    <input type="password" class="input-field" placeholder="Enter password" required>
+                    <input type="checkbox" class="checkbox"><span>Remember Password</span>
+                    <button type="submit" class = "submit-btn">Login</button>
+                </form>
+                <form id="register" class="input-group-register">
+                    <input type="text" class="input-field" placeholder="First Name" required>
+                    <input type="text" class="input-field" placeholder="Last Name" required>
+                    <input type="email" class="input-field" placeholder= "E-Mail ID" required>
+                    <input type="password" class="input-field" placeholder="Enter Password" required>
+                    <input type="password" class="input-field" placeholder="Confirm Password" required>
+                    <input type="checkbox" class="checkbox"><span>I agree to the terms and conditions</span>
+                    <button type="submit" class = "submit-btn">Register</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        var loginData = document.getElementById('login');
+        var regData = document.getElementById('register');
+        var btnValue = document.getElementById('btn');
+            
+        function register(){
+            loginData.style.left = '-400px';
+            regData.style.left = '50px';
+            btnValue.style.left = '110px';
+        }
+        function login(){
+            loginData.style.left = '50px';
+            regData.style.left = '450px';
+            btnValue.style.left = '0px';
+        }
+        var modal = document.getElementById('login-form');
+        window.onclick = function(event){
+            if(event.target == modal){
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>
