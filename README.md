@@ -2,6 +2,34 @@
 
 Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
 
+To getting started on your computer, you'll need two databases. One for the customer information (via JAVA) and the second for user login data connection (via Javascript).
+The following script has been used for creating the tables:
+
+Table 'Customer':
+```sql
+    CREATE TABLE `mydatabase`.`customer` (
+    `ID` INT NOT NULL AUTO_INCREMENT,
+    `Name` VARCHAR(45) NOT NULL,
+    `Address` VARCHAR(45) NULL,
+    `Email` VARCHAR(45) NOT NULL,
+    PRIMARY KEY (`ID`));
+```
+
+Table 'logindata'
+```sql
+CREATE TABLE `mydatabase`.`logindata` (
+  `user_id` INT NOT NULL AUTO_INCREMENT,
+  `user_email` VARCHAR(45) NOT NULL,
+  `user_pass` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`user_id`));
+```
+
+Please also check to correct URL for mySQL database server in the class 'SQLInterface.java'.
+
+Furthermore, you'll need node modules:
+- 'npm install mysql' to connect database with javascript
+- 'nom install express' 
+
 ## Folder Structure
 
 The workspace contains two folders by default, where:

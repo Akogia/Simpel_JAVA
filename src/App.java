@@ -8,10 +8,10 @@ public class App {
         // Connects to mySQL server
         SQLInterface.getConnection();
 
-        // create new Client with name and address
-        Client client1 = new Client("William Wilsson","arbitrarystreet 101, 56498 Springfield");
+        // create new Client with name, address and email
+        Client client1 = new Client("Jeremy Flinton","oneStreet 1, 123145 SinCity","thisismy@email.com");
 
-        //writeIntoDatabase(client1);
+        //SQLInterface.writeIntoDatabase(client1);
 
         // create Bill object
         Bill bill1 = new Bill(client1);
@@ -38,6 +38,7 @@ public class App {
         bill1.getBillInformation();
 
         SQLInterface.readFromDatabase(client1);
+        SQLInterface.closeConnDatabase();
     }
 
 }

@@ -1,20 +1,29 @@
-var loginData = document.getElementById('login');
-var regData = document.getElementById('register');
-var btnValue = document.getElementById('btn');
+import { createConnection, createPool } from "mysql";
+import express from "express";
 
-function register(){
-    loginData.style.left = '-400px';
-    regData.style.left = '50px';
-    btnValue.style.left = '110px';
-}
-function login(){
-    loginData.style.left = '50px';
-    regData.style.left = '450px';
-    btnValue.style.left = '0px';
-}
-var modal = document.getElementById('login-form');
-window.onclick = function(event){
-    if(event.target == modal){
-        modal.style.display = "none";
-    }
-}
+const app = express();
+
+//var connection = createConnection('jdbc:mysql://localhost:3306/mydatabase');
+
+const connection = createPool({
+    connectionLimit: 5,
+    host: "localhost",
+    user: "root1",
+    password: "",
+    database: "mydatabase"
+});
+
+// connect to the database
+/*** 
+ * This database has been created:
+ * CREATE TABLE `mydatabase`.`logindata` (
+ * `user_id` INT NOT NULL AUTO_INCREMENT,
+ * `user_email` VARCHAR(45) NOT NULL,
+ * `user_pass` VARCHAR(45) NOT NULL,
+ * PRIMARY KEY (`user_id`));
+ * **/
+connection.getConnection();
+
+console.log(connection);
+
+//connection.end();

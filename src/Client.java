@@ -2,13 +2,19 @@ public class Client {
     // attributes
     String name;
     String address;
-    private int id;
+    String email;
 
 
     // constructor
     Client(final String name, final String address){
         this.setAddress(address);
         this.setName(name);
+    }
+
+    Client(final String name, final String address, final String email){
+        this.setAddress(address);
+        this.setName(name);
+        this.setEmail(email);
     }
 
     // methods
@@ -19,6 +25,10 @@ public class Client {
     void setAddress(final String newAddress){
         this.address = newAddress;
     }
+    
+    void setEmail(final String newEmail){
+        this.email = newEmail;
+    }
 
     String getName(){
         return this.name;
@@ -26,5 +36,9 @@ public class Client {
 
     String getAddress(){
         return this.address;
+    }
+
+    String getEmail(){
+        return this.email;
     }
 }

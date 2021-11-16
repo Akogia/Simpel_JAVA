@@ -28,9 +28,9 @@
                     <button type="button" onclick="login()" class="toggle-btn">Login</button>
                     <button type="button" onclick="register()" class="toggle-btn">Register</button>
                 </div>
-                <form id="login" class="input-group-login">
-                    <input type="text" class="input-field" placeholder="E-Mail" required>
-                    <input type="password" class="input-field" placeholder="Enter password" required>
+                <form id="login" class="input-group-login" method = "post">
+                    <input type="text" class="input-field" name = "user_email" placeholder="E-Mail" required>
+                    <input type="password" class="input-field" name = "password" placeholder="Enter password" required>
                     <input type="checkbox" class="checkbox"><span>Remember Password</span>
                     <button type="submit" class = "submit-btn">Login</button>
                 </form>
@@ -51,7 +51,7 @@
         var loginData = document.getElementById('login');
         var regData = document.getElementById('register');
         var btnValue = document.getElementById('btn');
-            
+
         function register(){
             loginData.style.left = '-400px';
             regData.style.left = '50px';

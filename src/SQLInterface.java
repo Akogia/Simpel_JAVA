@@ -4,7 +4,6 @@ import java.sql.*;
 public class SQLInterface {
     private static String pw;
     private static Connection conn = null;
-    private static int id = 3;
     private static Statement stmt = null;
     
     /** 
@@ -13,12 +12,12 @@ public class SQLInterface {
      */
     /*
     This method connects to MySQL Server and uses 'mydatabase'. This following script describes the created table:
-    CREATE TABLE `customer` (
-    `ID` int NOT NULL,
-    `Name` varchar(45) DEFAULT NULL,
-    `Address` tinytext,
-    PRIMARY KEY (`ID`)
-    )
+    CREATE TABLE `mydatabase`.`customer` (
+    `ID` INT NOT NULL AUTO_INCREMENT,
+    `Name` VARCHAR(45) NOT NULL,
+    `Address` VARCHAR(45) NULL,
+    `Email` VARCHAR(45) NOT NULL,
+    PRIMARY KEY (`ID`));
     */
     public static Connection getConnection() throws Exception {
         // reads the password from config.txt file. This file is ignored by git
@@ -51,17 +50,14 @@ public class SQLInterface {
      * @throws SQLException
      */
     public static String writeIntoDatabase(Client clientInput) throws SQLException {
-        String inputText = "INSERT INTO `mydatabase`.`customer` (`ID`, `Name`, `Address`) VALUES ('" +
-                            id +
-                            "', '" +  clientInput.getName() +
+        String inputText = "INSERT INTO `mydatabase`.`customer` (`Name`, `Address`, `Email` ) VALUES ('" + clientInput.getName() +
                             "', '"+ clientInput.getAddress()+
+                            "', '"+ clientInput.getEmail()+
                             "');";
         System.out.println(inputText);
         try{
             stmt = (Statement) conn.createStatement();
             stmt.executeUpdate(inputText);
-            id++;
-            System.out.println(id);
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (Exception e) {
@@ -77,7 +73,8 @@ public class SQLInterface {
             ResultSet clientData = stmt.executeQuery(query);
             while (clientData.next()) {
                 System.out.println(clientData.getString(1) + ", " + clientData.getString(2) + ", "
-                    + clientData.getString(3));
+                    + clientData.getString(3) + ", " + clientData.getString(4)
+                    );
           
               }
         } catch (SQLException e) {
@@ -86,4 +83,17 @@ public class SQLInterface {
             e.printStackTrace();
         }
         }
+
+    public static void closeConnDatabase() throws SQLDataException{
+        if(conn != null){
+            try{
+                System.out.println("Let terminate the Connection");
+                conn.close();
+                System.out.println("\nDatabase connection terminated ...");
+            }
+            catch(Exception e){
+                System.out.println("Error in connection termination" + e);
+            }
+        }
+    }
 }
