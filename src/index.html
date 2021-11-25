@@ -29,19 +29,19 @@
                     <button type="button" onclick="register()" class="toggle-btn">Register</button>
                 </div>
                 <form id="login" class="input-group-login" method = "post">
-                    <input type="text" class="input-field" name = "user_email" placeholder="E-Mail" required>
-                    <input type="password" class="input-field" name = "password" placeholder="Enter password" required>
+                    <input type="text" class="input-field" id = "email" name = "user_email" placeholder="E-Mail" required>
+                    <input type="password" class="input-field" id = "password" name = "password" placeholder="Enter password" required>
                     <input type="checkbox" class="checkbox"><span>Remember Password</span>
-                    <button type="submit" class = "submit-btn">Login</button>
+                    <button type="submit" class = "submit-btn" onclick="submitLog_btn()">Login</button>
                 </form>
                 <form id="register" class="input-group-register">
-                    <input type="text" class="input-field" placeholder="First Name" required>
-                    <input type="text" class="input-field" placeholder="Last Name" required>
-                    <input type="email" class="input-field" placeholder= "E-Mail ID" required>
-                    <input type="password" class="input-field" placeholder="Enter Password" required>
-                    <input type="password" class="input-field" placeholder="Confirm Password" required>
+                    <input type="text" class="input-field" id="firstName" placeholder="First Name" required>
+                    <input type="text" class="input-field" id="lastName" placeholder="Last Name" required>
+                    <input type="email" class="input-field" id = "email" placeholder= "E-Mail ID" required>
+                    <input type="password" class="input-field" id = "password" placeholder="Enter Password" required>
+                    <input type="password" class="input-field" id = "confirmPassword" placeholder="Confirm Password" required>
                     <input type="checkbox" class="checkbox"><span>I agree to the terms and conditions</span>
-                    <button type="submit" class = "submit-btn">Register</button>
+                    <button type="submit" class = "submit-btn" onclick="submitReg_btn()">Register</button>
                 </form>
             </div>
         </div>
@@ -69,6 +69,7 @@
             }
         }
     </script>
+    <script src="index.js"></script>
 </body>
 
 </html>

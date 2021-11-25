@@ -1,29 +1,25 @@
-import { createConnection, createPool } from "mysql";
-import express from "express";
+/**
+ * Create connection to REST API
+ */
 
-const app = express();
 
-//var connection = createConnection('jdbc:mysql://localhost:3306/mydatabase');
+const request = new XMLHttpRequest();
+const url = 'http://localhost:3000/login';
+request.open("GET", url);
 
-const connection = createPool({
-    connectionLimit: 5,
-    host: "localhost",
-    user: "root1",
-    password: "",
-    database: "mydatabase"
-});
+// XMLHttpRequest is asynchronous so the methods does not block the application until a repsonse is received
+//request.send();
 
-// connect to the database
-/*** 
- * This database has been created:
- * CREATE TABLE `mydatabase`.`logindata` (
- * `user_id` INT NOT NULL AUTO_INCREMENT,
- * `user_email` VARCHAR(45) NOT NULL,
- * `user_pass` VARCHAR(45) NOT NULL,
- * PRIMARY KEY (`user_id`));
- * **/
-connection.getConnection();
+//request.onload = (e) => {
+//    alert(request.response);
+//}
 
-console.log(connection);
+function submitReg_btn() {
+    var x = document.getElementById("firstName");
+    console.log(x);
+}
 
-//connection.end();
+function submitLog_btn() {
+    var y = document.getElementById("email");
+    console.log(y);
+}
